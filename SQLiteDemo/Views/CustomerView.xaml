@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteDemo.Views.CustomerView"
+             Title="CustomerView">
+    <Grid RowDefinitions=".8*, .2*">
+        <CollectionView ItemsSource="{Binding MyCollection}"
+                        SelectionMode="Multiple">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding Name}"/>
+                        <BoxView/>
+                        <Label Text="{Binding Surname}"/>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Grid.Row="1" Text="Add customer" Command="{Binding AddCommand}"/>
+    </Grid>
+</ContentPage>
